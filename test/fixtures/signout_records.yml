@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time_out: 2013-05-27 20:26:41
+  expected_return: 2013-05-27 20:26:41
+  time_in: 2013-05-27 20:26:41
+  destination: MyString
+  companions: MyString
+  transportation: MyString
+  notes: MyString
+  signout_type: MyString
+
+two:
+  time_out: 2013-05-27 20:26:41
+  expected_return: 2013-05-27 20:26:41
+  time_in: 2013-05-27 20:26:41
+  destination: MyString
+  companions: MyString
+  transportation: MyString
+  notes: MyString
+  signout_type: MyString

@@ -1,0 +1,2 @@
+module Sli::UsersHelper
+end

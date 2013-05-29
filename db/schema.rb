@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526033505) do
+ActiveRecord::Schema.define(:version => 20130528012623) do
+
+  create_table "halls", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "sli_id"
+  end
+
+  create_table "signout_records", :force => true do |t|
+    t.datetime "time_out"
+    t.datetime "expected_return"
+    t.datetime "time_in"
+    t.string   "destination"
+    t.string   "companions"
+    t.string   "transportation"
+    t.string   "notes"
+    t.string   "signout_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,6 +47,19 @@ ActiveRecord::Schema.define(:version => 20130526033505) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.integer  "hall_id"
+    t.string   "room"
+    t.string   "phone"
+    t.datetime "dob"
+    t.string   "class_of"
+    t.string   "gender"
+    t.boolean  "signed_out"
+    t.string   "type"
+    t.string   "authentication_token"
+    t.integer  "signout_record_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

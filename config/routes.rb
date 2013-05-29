@@ -1,6 +1,30 @@
 Doit::Application.routes.draw do
   devise_for :users
 
+  namespace :api do
+    namespace :v1 do
+      resources :tokens, only: [:create, :destroy]
+    end
+  end
+
+  namespace :admin do
+    post 'users/add_sli'
+  end
+
+  namespace :sli do
+    resources :signout_records
+
+    post 'users/add_student'
+    get 'users/list_signed_out'
+    get 'users/all_students'
+    get 'users/:id' => 'users#show'
+  end
+
+  namespace :student do
+    get 'signout_records/sign_in'
+    resources :signout_records
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,2 @@
+module Students::SignoutRecordsHelper
+end

@@ -1,0 +1,2 @@
+module Sli::SignoutRecordsHelper
+end
