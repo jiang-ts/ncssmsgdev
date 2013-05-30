@@ -1,0 +1,22 @@
+[
+    {
+        id:1,
+        type:"by foot"
+    },
+    {
+        id:2,
+        type:"bike"
+    },
+    {
+        id:3,
+        type:"car"
+    },
+    {
+        id:4,
+        type:"bus"
+    },
+    {
+        id:5,
+        type:"scooter"
+    }
+]
