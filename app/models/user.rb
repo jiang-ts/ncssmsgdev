@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
     :middle_name,
     :last_name,
     :hall,
-    :room
+    :room,
+    :type
   # attr_accessible :title, :body
 
   belongs_to :hall

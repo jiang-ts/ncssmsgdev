@@ -13,3 +13,4 @@ default_admin:
   id: 1
   email: adm@adm.in
   encrypted_password: $2a$10$7nsMEeTWu2JBZG2SPvD3m.cvX7E2xRR0eUwmjCQp0tbjiWwSa75He
+  type: admin

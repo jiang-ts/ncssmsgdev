@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
   respond_to :json
 
   def add_sli
+    logger("BEGIN")
     email = params[:email]
     @sli = User.find_by_email(email)
     if @sli.nil?
@@ -30,7 +31,7 @@ class Admin::UsersController < ApplicationController
       if @hall.save! and @sli.save!
         render json: {message: 'Success!', success: true}
       else
-        render status: 500
+        render status: 500, json: {message: 'Internal error!', success: false}
       end
     end
   end
@@ -39,7 +40,7 @@ class Admin::UsersController < ApplicationController
 
   def check_admin_credentials
     unless (user_signed_in? and current_user.type == 'admin')
-      render status: 401
+      render status: 401, json: {message: 'You have not logged in!', success: false}
     end
   end
 end
