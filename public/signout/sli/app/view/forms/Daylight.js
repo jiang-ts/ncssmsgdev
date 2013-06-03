@@ -3,7 +3,7 @@ Ext.define('Signout.view.forms.Daylight', {
     xtype: 'daylight',
     layout: 'form',
     collapsible: false,
-    id: 'daylightForm',
+//    id: 'daylightForm',
     //url: 'save-form.php',
     frame: true,
     title: 'Signout - Daylight Hours',
@@ -61,7 +61,7 @@ Ext.define('Signout.view.forms.Daylight', {
             this.up('form').getForm().isValid();
         }
     },{
-        text: 'Cancel',
+        text: 'Clear',
         handler: function() {
             this.up('form').getForm().reset();
         }

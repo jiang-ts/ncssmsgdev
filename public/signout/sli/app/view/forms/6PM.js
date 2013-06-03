@@ -9,6 +9,7 @@ Ext.define('Signout.view.forms.6PM', {
     frame: true,
     title: 'Signout - Past 6 PM',
     bodyPadding: '5 5 0',
+    height: 200,
     width: 350,
     fieldDefaults: {
         msgTarget: 'side',
