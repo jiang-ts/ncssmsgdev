@@ -39,7 +39,7 @@ private
 
   def check_student_credentials
     unless (user_signed_in?)
-      render status: 401
+      render status: 401, json: {success: false, message: "You are not signed in!"}
     end
   end
 end

@@ -12,7 +12,7 @@ class Sli::SignoutRecordsController < ApplicationController
 
   def check_sli_credentials
     unless (user_signed_in? && current_user.type == 'sli')
-      render status: 401
+      render status: 401, json: {success: false, message: "You are not signed in as an SLI."}
     end
   end
 end
