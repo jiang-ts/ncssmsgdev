@@ -4,7 +4,6 @@ class Admin::UsersController < ApplicationController
   respond_to :json
 
   def add_sli
-    logger("BEGIN")
     email = params[:email]
     @sli = User.find_by_email(email)
     if @sli.nil?
