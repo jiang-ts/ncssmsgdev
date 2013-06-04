@@ -84,7 +84,6 @@ Ext.define('Signout.view.LoginForm', {
             }
         },{ 
             text:'Login',
-                    console.log('clicked!');
             handler: function() {
                     console.log('checking');
                 if(this.up('form').getForm().isValid()==true){
