@@ -58,6 +58,7 @@ Ext.define('Signout.view.LoginForm', {
             }
             */
         },
+        /*
         {
             xtype:'combobox',
             fieldLabel: 'User Type',
@@ -68,12 +69,11 @@ Ext.define('Signout.view.LoginForm', {
             allowBlank: false,
             typeAhead: true,
             forceSelection: true,
-            /*
             listeners: {
                 specialkey: submitOnEnter
             }
-            */
         }
+        */
     ],
     
     buttons: [
@@ -94,7 +94,7 @@ Ext.define('Signout.view.LoginForm', {
                         method: 'POST',
                         success: function (response) {
                            console.log(response.responseText);                                   
-                        }
+                        },
                         failure: function (response) {
                            console.log(response.status);                                   
                         }
