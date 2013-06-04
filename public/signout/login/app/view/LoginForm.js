@@ -95,6 +95,9 @@ Ext.define('Signout.view.LoginForm', {
                         success: function (response) {
                            console.log(response.responseText);                                   
                         }
+                        failure: function (response) {
+                           console.log(response.status);                                   
+                        }
                     });
                 }
 /*
