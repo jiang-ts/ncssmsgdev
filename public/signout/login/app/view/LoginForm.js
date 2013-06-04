@@ -1,3 +1,4 @@
+/*
 var actypes = Ext.create('Ext.data.Store', {
     fields: ['actype'],
     data : [
@@ -6,14 +7,29 @@ var actypes = Ext.create('Ext.data.Store', {
         {"actype":"Admin"}
     ]
 });
-/*
+*/
 function submitOnEnter(field, event) {
     if (event.getKey() == event.ENTER) {
-        var form = field.up('form').getForm();
-        form.submit();
+        loginPressed(Ext.getCmp('uname').getValue(), Ext.getCmp('pword').getValue());
+        console.log(Ext.getCmp('uname').getValue()+ ' '+ Ext.getCmp('pword').getValue());
     }
 }
-*/
+function loginPressed(uname, pword){
+    Ext.Ajax.request({
+        url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
+        waitMsg: 'Loading...',
+        method: 'POST',
+        params: 'email=' + uname + '&password=' + pword,
+        success: function (response) {
+           console.log(response.responseText);                                   
+           console.log('success');
+        },
+        failure: function (response) {
+           console.log(response.status);                                   
+           console.log('fail');
+        }
+    });
+}
 
 Ext.define('Signout.view.LoginForm', {
     extend: 'Ext.form.Panel',
@@ -40,11 +56,10 @@ Ext.define('Signout.view.LoginForm', {
             fieldLabel: 'Username',
             name: 'email',
             emptyText: 'username',
-            /*
             listeners: {
                 specialkey: submitOnEnter
-            }
-            */
+            },
+            id: 'uname'
         },
         {
             allowBlank: false,
@@ -52,11 +67,10 @@ Ext.define('Signout.view.LoginForm', {
             name: 'password',
             emptyText: 'password',
             inputType: 'password',
-            /*
             listeners: {
                 specialkey: submitOnEnter
-            }
-            */
+            },
+            id: 'pword'
         },
         /*
         {
@@ -85,20 +99,9 @@ Ext.define('Signout.view.LoginForm', {
         },{ 
             text:'Login',
             handler: function() {
-                    console.log('checking');
                 if(this.up('form').getForm().isValid()==true){
-                    console.log('loading');
-                    this.up('form').getForm().submit({
-                        url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
-                        waitMsg: 'Loading...',
-                        method: 'POST',
-                        success: function (response) {
-                           console.log(response.responseText);                                   
-                        },
-                        failure: function (response) {
-                           console.log(response.status);                                   
-                        }
-                    });
+                    loginPressed(Ext.getCmp('uname').getValue(), Ext.getCmp('pword').getValue());
+                    //this.up('form').getForm().submit({
                 }
 /*
                 Ext.Ajax.request({
@@ -120,17 +123,4 @@ Ext.define('Signout.view.LoginForm', {
         }
     ]
 });
-/*
-                Ext.Ajax.request({
-                    url: 'http://ncssmsgdev.herokuapp.com/api/v1/tokens.json',
-                    method: 'POST',
-                    jsonData: 'email=adm@adm.in&password=admin123',
-                    success: function() {
-                        console.log('success');
-                    },
-                    failure: function() {
-                        console.log('woops');
-                    }
-                });
-*/
 
