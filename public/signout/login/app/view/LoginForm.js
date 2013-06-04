@@ -6,12 +6,14 @@ var actypes = Ext.create('Ext.data.Store', {
         {"actype":"Admin"}
     ]
 });
+/*
 function submitOnEnter(field, event) {
     if (event.getKey() == event.ENTER) {
         var form = field.up('form').getForm();
         form.submit();
     }
 }
+*/
 
 Ext.define('Signout.view.LoginForm', {
     extend: 'Ext.form.Panel',
@@ -38,9 +40,11 @@ Ext.define('Signout.view.LoginForm', {
             fieldLabel: 'Username',
             name: 'email',
             emptyText: 'username',
+            /*
             listeners: {
                 specialkey: submitOnEnter
             }
+            */
         },
         {
             allowBlank: false,
@@ -48,9 +52,11 @@ Ext.define('Signout.view.LoginForm', {
             name: 'password',
             emptyText: 'password',
             inputType: 'password',
+            /*
             listeners: {
                 specialkey: submitOnEnter
             }
+            */
         },
         {
             xtype:'combobox',
@@ -62,9 +68,11 @@ Ext.define('Signout.view.LoginForm', {
             allowBlank: false,
             typeAhead: true,
             forceSelection: true,
+            /*
             listeners: {
                 specialkey: submitOnEnter
             }
+            */
         }
     ],
     
@@ -76,14 +84,17 @@ Ext.define('Signout.view.LoginForm', {
             }
         },{ 
             text:'Login',
+                    console.log('clicked!');
             handler: function() {
-                if(this.up('form').getForm().isValid()){
+                    console.log('checking');
+                if(this.up('form').getForm().isValid()==true){
+                    console.log('loading');
                     this.up('form').getForm().submit({
                         url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
                         waitMsg: 'Loading...',
                         method: 'POST',
                         success: function (form, action) {
-                           console.log(action.response.responseText);                                   
+                           console.log(action.responseText);                                   
                         }
                     });
                 }
