@@ -92,8 +92,8 @@ Ext.define('Signout.view.LoginForm', {
                         url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
                         waitMsg: 'Loading...',
                         method: 'POST',
-                        success: function (form, action) {
-                           console.log(action.responseText);                                   
+                        success: function (response) {
+                           console.log(response.responseText);                                   
                         }
                     });
                 }
