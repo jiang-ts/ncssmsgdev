@@ -17,15 +17,13 @@ function submitOnEnter(field, event) {
 function loginPressed(uname, pword){
     Ext.Ajax.request({
         url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
-        waitMsg: 'Loading...',
+        //waitMsg: 'Loading...',
         method: 'POST',
         params: 'email=' + uname + '&password=' + pword,
         success: function (response) {
-           console.log(response.responseText);                                   
-           var time = 1/96;
-           setCookie('token', response.responseText, time);
+           //var time = 1/96;
+           setCookie('token', response.responseText/*, time*/);
            var responseobj = Ext.decode(response.responseText);
-           console.log('success');
            /*
             * if type==student 
             * go to student view etc.
@@ -43,8 +41,8 @@ function loginPressed(uname, pword){
            }
         },
         failure: function (response) {
+           alert('login failed!');
            console.log(response.status);                                   
-           console.log('fail');
         }
     });
 }

@@ -9,7 +9,6 @@ Ext.define('Signout.view.Viewport', {
 
     requires: [
         'Signout.view.components.Main',
-        'Signout.view.components.Announcements',
         'Signout.view.components.Navigation',
         'Signout.view.components.Header',
         'Ext.layout.container.Border'
@@ -28,12 +27,6 @@ Ext.define('Signout.view.Viewport', {
         xtype: 'appheader',
         region: 'north'
     },{
-        xtype: 'viewAnnouncements',
-        region: 'east',
-        collapsible: true,
-        split: true,
-        bodyPadding: 0
-    }, {
         xtype: 'viewNavigation',
         region:'west',
         collapsible: true,

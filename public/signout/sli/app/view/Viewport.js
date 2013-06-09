@@ -1,7 +1,7 @@
 var tok = getCookie('token');
 var tokobj = Ext.decode(tok);
 if(tok==null||tokobj.type!='sli'){
-//    location.href='../login/index.html';
+    location.href='../login/index.html';
     alert("session timed out!");
 };
 Ext.define('Signout.view.Viewport', {

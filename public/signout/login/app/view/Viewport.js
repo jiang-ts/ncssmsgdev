@@ -1,3 +1,4 @@
+delCookie('token');
 Ext.define('Signout.view.Viewport', {
     extend: 'Ext.container.Viewport',
 

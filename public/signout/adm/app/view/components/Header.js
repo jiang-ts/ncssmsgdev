@@ -17,7 +17,7 @@ Ext.define('Signout.view.components.Header', {
         this.items = [{
             xtype: 'component',
             id: 'app-header-title',
-            html: 'NCSSM Sign-Out Portal: SLI View',
+            html: 'NCSSM Sign-Out Portal: Admin View',
             flex: 1
         },{
             xtype:'button',
