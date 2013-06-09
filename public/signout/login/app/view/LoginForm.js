@@ -42,7 +42,7 @@ function loginPressed(uname, pword){
         },
         failure: function (response) {
            alert('login failed!');
-           console.log(response.status);                                   
+           console.log(response.status); 
         }
     });
 }
