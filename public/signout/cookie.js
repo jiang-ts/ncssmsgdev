@@ -18,7 +18,7 @@ function getCookie(NameOfCookie,doc)
     }
     return null;
 }
-function setCookie(NameOfCookie,value,expiredays,doc)
+function setCookie(NameOfCookie,value,expiredays,type,doc)
 {
     if(doc)
         target_doc=doc;
@@ -26,9 +26,9 @@ function setCookie(NameOfCookie,value,expiredays,doc)
         target_doc=document;
     var ExpireDate=new Date();
     ExpireDate.setTime(ExpireDate.getTime()+(expiredays*24*3600*1000));
-    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString());
+    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString()) + '; path = /ncssmsgdev/public/signout/' + type;
 }
-function delCookie(NameOfCookie,doc)
+function delCookie(NameOfCookie,type,doc)
 {
     if(doc)
     target_doc=doc;
@@ -36,7 +36,8 @@ function delCookie(NameOfCookie,doc)
         target_doc=document;
     if(getCookie(NameOfCookie))
     {
-        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT" + '; path = /ncssmsgdev/public/signout/' + type;
+
     }
 }
 function getFormat()
@@ -61,11 +62,13 @@ function getFormat()
         return'image/png';
     }
 };
+/*
 initd=function()
 {
-    var tk=getCookie('ticket');
+    var tk=getCookie('token');
     if(tk==null)
     {
         window.location.replace("../login/index.html");
     }
 }
+*/

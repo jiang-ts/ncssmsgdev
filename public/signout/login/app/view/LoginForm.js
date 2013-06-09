@@ -8,6 +8,7 @@ var actypes = Ext.create('Ext.data.Store', {
     ]
 });
 */
+
 function submitOnEnter(field, event) {
     if (event.getKey() == event.ENTER) {
         loginPressed(Ext.getCmp('uname').getValue(), Ext.getCmp('pword').getValue());
@@ -21,9 +22,9 @@ function loginPressed(uname, pword){
         method: 'POST',
         params: 'email=' + uname + '&password=' + pword,
         success: function (response) {
-           //var time = 1/96;
-           setCookie('token', response.responseText/*, time*/);
+           var time = 1/96;
            var responseobj = Ext.decode(response.responseText);
+           setCookie('token', response.responseText, time, responseobj.type);
            /*
             * if type==student 
             * go to student view etc.
