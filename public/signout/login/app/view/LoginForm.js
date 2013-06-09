@@ -25,6 +25,7 @@ function loginPressed(uname, pword){
            var time = 1/96;
            var responseobj = Ext.decode(response.responseText);
            setCookie('token', response.responseText, time, responseobj.type);
+           alert(responseobj.type);
            /*
             * if type==student 
             * go to student view etc.

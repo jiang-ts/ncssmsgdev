@@ -26,7 +26,7 @@ function setCookie(NameOfCookie,value,expiredays,type,doc)
         target_doc=document;
     var ExpireDate=new Date();
     ExpireDate.setTime(ExpireDate.getTime()+(expiredays*24*3600*1000));
-    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString()) + '; path = /ncssmsgdev/public/signout/' + type;
+    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString()) + '; path = /signout/' + type;
 }
 function delCookie(NameOfCookie,type,doc)
 {
@@ -36,7 +36,7 @@ function delCookie(NameOfCookie,type,doc)
         target_doc=document;
     if(getCookie(NameOfCookie))
     {
-        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT" + '; path = /ncssmsgdev/public/signout/' + type;
+        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT" + '; path = /signout/' + type;
 
     }
 }
