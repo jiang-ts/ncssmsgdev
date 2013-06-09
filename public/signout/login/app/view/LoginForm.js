@@ -23,14 +23,23 @@ function loginPressed(uname, pword){
         success: function (response) {
            console.log(response.responseText);                                   
            setCookie('token', response.responseText);
+           var responseobj = Ext.decode(response.responseText);
            console.log('success');
            /*
             * if type==student 
-            * go to student view 
+            * go to student view etc.
             * 
-            * read token into store.
+            * Put token into cookie.
             * 
            */
+           if(responseobj.type=='sli')
+           {
+                location.href = '../sli/index.html';
+           }
+           if(responseobj.type=='admin')
+           {
+                location.href = '../admin/index.html';
+           }
         },
         failure: function (response) {
            console.log(response.status);                                   
