@@ -22,7 +22,8 @@ function loginPressed(uname, pword){
         params: 'email=' + uname + '&password=' + pword,
         success: function (response) {
            console.log(response.responseText);                                   
-           setCookie('token', response.responseText);
+           var time = 1/96;
+           setCookie('token', response.responseText, time);
            var responseobj = Ext.decode(response.responseText);
            console.log('success');
            /*

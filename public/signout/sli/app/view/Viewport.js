@@ -1,3 +1,7 @@
+tok = getCookie('token');
+if(!tok||tok.type!='sli'){
+    location.href='../login/index.html';
+}
 Ext.define('Signout.view.Viewport', {
     extend: 'Ext.container.Viewport',
 
