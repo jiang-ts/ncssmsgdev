@@ -36,7 +36,7 @@ function delCookie(NameOfCookie,doc)
         target_doc=document;
     if(getCookie(NameOfCookie))
     {
-        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        target_doc.cookie=NameOfCookie+"="+"; expires=Thu, 01-Jan-70 00:00:01 GMT" + "; path=/";
     }
 }
 function getFormat()

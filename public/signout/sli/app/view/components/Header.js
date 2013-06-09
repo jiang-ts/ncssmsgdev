@@ -19,11 +19,19 @@ Ext.define('Signout.view.components.Header', {
             id: 'app-header-title',
             html: 'NCSSM Sign-Out Portal: SLI View',
             flex: 1
+        },{
+            xtype:'button',
+            text:'logout',
+            handler: function(){
+                location.href = '../login/index.html';
+                delCookie('token');
+            }
         }];
 
 
         this.callParent(arguments);
     }
+    
     
 });
 /*
