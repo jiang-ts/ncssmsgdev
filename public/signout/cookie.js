@@ -66,10 +66,6 @@ initd=function()
     var tk=getCookie('ticket');
     if(tk==null)
     {
-        window.location.replace("index.html");
-        if(window.schedulerwin!=null&&window.schedulerwin.open)
-            window.schedulerwin.close();
+        window.location.replace("../login/index.html");
     }
-    if(tk.match(/^TICKET/))
-        return;
 }
