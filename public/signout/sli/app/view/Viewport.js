@@ -1,7 +1,8 @@
-tok = getCookie('token');
-if(!tok||tok.type!='sli'){
+var tok = getCookie('token');
+if(tok==null||tok.type!='sli'){
     location.href='../login/index.html';
-}
+    alert("session timed out!");
+};
 Ext.define('Signout.view.Viewport', {
     extend: 'Ext.container.Viewport',
 

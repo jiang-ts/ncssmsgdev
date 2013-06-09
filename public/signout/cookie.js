@@ -26,7 +26,7 @@ function setCookie(NameOfCookie,value,expiredays,doc)
         target_doc=document;
     var ExpireDate=new Date();
     ExpireDate.setTime(ExpireDate.getTime()+(expiredays*24*3600*1000));
-    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString());
+    target_doc.cookie=NameOfCookie+"="+escape(value)+((expiredays==null)?"":"; expires="+ExpireDate.toGMTString()) + "; path=/";
 }
 function delCookie(NameOfCookie,doc)
 {
