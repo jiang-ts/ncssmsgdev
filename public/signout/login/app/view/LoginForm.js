@@ -18,14 +18,13 @@ function submitOnEnter(field, event) {
 function loginPressed(uname, pword){
     Ext.Ajax.request({
         url:"http://ncssmsgdev.herokuapp.com/api/v1/tokens.json",
-        //waitMsg: 'Loading...',
+        waitMsg: 'Loading...',
         method: 'POST',
         params: 'email=' + uname + '&password=' + pword,
         success: function (response) {
            var time = 1/96;
            var responseobj = Ext.decode(response.responseText);
            setCookie('token', response.responseText, time, responseobj.type);
-           alert(responseobj.type);
            /*
             * if type==student 
             * go to student view etc.
