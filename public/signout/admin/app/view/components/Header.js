@@ -24,7 +24,7 @@ Ext.define('Signout.view.components.Header', {
             text:'logout',
             handler: function(){
                 location.href = '../login/index.html';
-                delCookie('token');
+                delCookie('token','admin');
             }
         }];
 
