@@ -38,7 +38,7 @@ function loginPressed(uname, pword){
            }
            if(responseobj.type=='admin')
            {
-                location.href = '../adm/index.html';
+                location.href = '../admin/index.html';
            }
         },
         failure: function (response) {
