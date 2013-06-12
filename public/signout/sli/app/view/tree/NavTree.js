@@ -29,11 +29,7 @@ Ext.define('Signout.view.tree.NavTree', {
     extend: 'Ext.tree.Panel',
     xtype: 'navtree',
     requires: [
-        'Ext.form.field.HtmlEditor',
-        //'Ext.form.field.TextArea'
-        'Ext.tab.*',
         'Ext.window.*',
-        'Ext.tip.*',
         'Ext.layout.container.Border',
         'Signout.view.windows.*'
     ],

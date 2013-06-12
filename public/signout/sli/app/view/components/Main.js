@@ -14,15 +14,16 @@ Ext.define('Signout.view.components.Main', {
     
     requires: [
         'Ext.ux.DataTip',
+        /*
         'Signout.store.Halls',
         'Signout.view.formCards.Daylight',
         'Signout.view.formCards.6PM',
         'Signout.view.formCards.Curfew',
         'Signout.view.formCards.Overnight',
         'Signout.view.formCards.Registration',
+        */
         'Signout.view.tables.CurrentSignouts',
-        'Signout.view.tables.SignoutTable',
-        'Signout.view.components.Notes'
+        //'Signout.view.components.Notes'
     ],
 
     title: 'Main',

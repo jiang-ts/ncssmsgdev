@@ -1,39 +1,3 @@
-/*var map = new Ext.util.KeyMap({
-    target: "my-element",
-    key: 13, // or Ext.EventObject.ENTER
-    fn: function(){ alert("Return was pressed"); },
-    scope: 'searchField',
-});
-*/
-var halls = Ext.create('Ext.data.Store', {
-    fields: ['abbr', 'name'],
-    data : [
-        {"abbr":"ALL", "name":"All Halls"},
-        {"abbr":"1BL", "name":"1 Beall"},
-        {"abbr":"2BL", "name":"2 Beall"},
-        {"abbr":"3BL", "name":"3 Beall"},
-        {"abbr":"2BR", "name":"2 Bryan"},
-        {"abbr":"3BR", "name":"3 Bryan"},
-        {"abbr":"4BR", "name":"4 Bryan"},
-        {"abbr":"1HL", "name":"1 Hill"},
-        {"abbr":"2HLE", "name":"2 Hill East"},
-        {"abbr":"2HLN", "name":"2 Hill North"},
-        {"abbr":"1H", "name":"1 Hunt"},
-        {"abbr":"2HE", "name":"2 Hunt East"},
-        {"abbr":"2HW", "name":"2 Hunt West"},
-        {"abbr":"3HE", "name":"3 Hunt East"},
-        {"abbr":"3HW", "name":"3 Hunt West"},
-        {"abbr":"4HE", "name":"4 Hunt East"},
-        {"abbr":"4HW", "name":"4 Hunt West"},
-        {"abbr":"CCD", "name":"1C2C1D"},
-        {"abbr":"EED", "name":"1E2E1D"},
-        {"abbr":"GdRe", "name":"Ground Reynolds"},
-        {"abbr":"GdRo", "name":"Ground Royal"},
-        {"abbr":"1Ro", "name":"1 Royal"},
-    ]
-});
-
-
 Ext.define('Signout.view.tables.CurrentSignouts', {
     extend: 'Ext.grid.Panel',
     xtype: 'signedoutlist',
@@ -55,32 +19,11 @@ Ext.define('Signout.view.tables.CurrentSignouts', {
             flex: 2
         },
         {  
-            text: 'Destination', dataIndex: '', flex: 2 
+            text: 'Email', dataIndex: '', flex: 2 
         },
         {  
-            text: 'Transportation', dataIndex: '' , flex: 1
-        },
-        {  
-            text: 'Companions', dataIndex: '' , flex: 1
-        },
-        /* 
-        // Place in Detail View
-        { 
-            text: 'Email', dataIndex: 'email', flex: 1, 
-                renderer: function(value) {
-                return Ext.String.format('<a href="mailto:{0}">{1}</a>', value, value);
-            }
-        },
-        {  
-            text: 'Phone', dataIndex: 'phone' 
-        },*/
-        {  
-            text: 'Time Out', dataIndex: '' , flex: 1
-        },
-        {  
-            text: 'Expected Return', dataIndex: '' , flex: 1
-        },
-        
+            text: 'Hall', dataIndex: '' , flex: 1
+        }
     ],
     // make the table searchable
     searchValue: null,

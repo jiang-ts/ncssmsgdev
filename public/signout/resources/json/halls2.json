@@ -1,0 +1,27 @@
+var halls = Ext.create('Ext.data.Store', {
+    fields: ['abbr', 'name'],
+    data : [
+        {"abbr":"ALL", "name":"All Halls"},
+        {"abbr":"1BL", "name":"1 Beall"},
+        {"abbr":"2BL", "name":"2 Beall"},
+        {"abbr":"3BL", "name":"3 Beall"},
+        {"abbr":"2BR", "name":"2 Bryan"},
+        {"abbr":"3BR", "name":"3 Bryan"},
+        {"abbr":"4BR", "name":"4 Bryan"},
+        {"abbr":"1HL", "name":"1 Hill"},
+        {"abbr":"2HLE", "name":"2 Hill East"},
+        {"abbr":"2HLN", "name":"2 Hill North"},
+        {"abbr":"1H", "name":"1 Hunt"},
+        {"abbr":"2HE", "name":"2 Hunt East"},
+        {"abbr":"2HW", "name":"2 Hunt West"},
+        {"abbr":"3HE", "name":"3 Hunt East"},
+        {"abbr":"3HW", "name":"3 Hunt West"},
+        {"abbr":"4HE", "name":"4 Hunt East"},
+        {"abbr":"4HW", "name":"4 Hunt West"},
+        {"abbr":"CCD", "name":"1C2C1D"},
+        {"abbr":"EED", "name":"1E2E1D"},
+        {"abbr":"GdRe", "name":"Ground Reynolds"},
+        {"abbr":"GdRo", "name":"Ground Royal"},
+        {"abbr":"1Ro", "name":"1 Royal"},
+    ]
+});
