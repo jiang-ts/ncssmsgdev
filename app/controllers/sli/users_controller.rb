@@ -59,6 +59,22 @@ class Sli::UsersController < ApplicationController
     ]
   end
 
+  def list_all_signed_out
+    @users = User.where(type: 'student').where(signed_out: true)
+    render json: @users, only: [
+      :id,
+      :first_name,
+      :middle_name,
+      :last_name,
+      :destination,
+      :companions,
+      :time_in,
+      :expected_return,
+      :time_out,
+      :notes
+    ]
+  end
+
   private
 
   def check_sli_credentials
