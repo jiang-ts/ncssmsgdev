@@ -7,14 +7,18 @@ Ext.define('Signout.store.SignedOutStudents', {
     
     //I have no clue how this part works.
     fields: ['id','name', 'email', 'phone'],
+    //var records = 
+    /*
     data: {'items':[
         { 'name': 'Lisa',  "email":"lisa@simpsons.com",  "phone":"555-111-1224"  },
         { 'name': 'Bart',  "email":"bart@simpsons.com",  "phone":"555-222-1234" },
         { 'name': 'Homer', "email":"home@simpsons.com",  "phone":"555-222-1244"  },
         { 'name': 'Marge', "email":"marge@simpsons.com", "phone":"555-222-1254"  }
     ]},
+    */
                             
-    autoLoad: true,
+//    autoLoad: true,
+    /*
     proxy: {
         //type: 'ajax',
         type: 'memory',
@@ -25,5 +29,6 @@ Ext.define('Signout.store.SignedOutStudents', {
         }
 
     }
+        */
 });
 

@@ -6,7 +6,7 @@ Ext.Loader.setPath('Ext.ux', '../../../../ext/examples/ux');
 var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
 var halls = Ext.create('Signout.store.Halls');
 var transportation = Ext.create('Signout.store.Transportations');
-var studentlist = Ext.create('Signout.store.SignedOutStudents');
+//var studentlist = Ext.create('Signout.store.SignedOutStudents');
 
 Ext.define('Signout.view.components.Main', {
     extend: 'Ext.panel.Panel',
