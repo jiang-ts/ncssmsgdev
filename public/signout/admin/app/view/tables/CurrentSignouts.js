@@ -39,7 +39,7 @@ Ext.define('Signout.view.tables.CurrentSignouts', {
     // Component initialization override: adds the top and bottom toolbars and setup headers renderer.
     initComponent: function() {
         var me = this;
-        me.tbar = ['Display: ',{
+        me.tbar = [/*'Display: ',{
                  xtype: 'combobox',
                  store: halls,
                  queryMode: 'local',
@@ -48,7 +48,7 @@ Ext.define('Signout.view.tables.CurrentSignouts', {
                  value: 'All Halls',
                  allowBlank: false,
                  typeAhead: true,
-             }, 'Search',{
+             },*/ 'Search',{
                  xtype: 'textfield',
                  name: 'searchField',
                  hideLabel: true,

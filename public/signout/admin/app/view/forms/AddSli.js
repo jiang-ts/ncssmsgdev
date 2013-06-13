@@ -2,7 +2,6 @@
 var halls = Ext.create('Ext.data.Store', {
     fields: ['abbr', 'name'],
     data : [
-        {"abbr":"ALL", "name":"All Halls"},
         {"abbr":"1BL", "name":"1 Beall"},
         {"abbr":"2BL", "name":"2 Beall"},
         {"abbr":"3BL", "name":"3 Beall"},
@@ -73,6 +72,7 @@ Ext.define('Signout.view.forms.AddSli', {
         name: 'password',
         inputType: 'password',
         allowBlank: false,
+        maxLengthText: 'Password must contains at least 8 characters'
     },{
         xtype: 'combobox',
         displayField: 'name',
@@ -90,7 +90,19 @@ Ext.define('Signout.view.forms.AddSli', {
     buttons: [{
         text: 'Save',
         handler: function() {
-            this.up('form').getForm().isValid();
+            var theform = this.up('form').getForm();
+            theform.isValid();
+            theform.submit({
+                url: '/admin/users/add_sli.json',
+                waitMsg: 'Loading...',
+                method: 'POST',
+                success: function (form, action) {
+                    console.log(action.response.responseText);                                   
+                }
+                /*failure: function (response){
+                    alert('Failed');
+                }*/
+            });
         }
     },{
         text: 'Cancel',
