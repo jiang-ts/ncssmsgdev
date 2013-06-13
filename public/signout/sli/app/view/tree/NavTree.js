@@ -46,6 +46,8 @@ Ext.define('Signout.view.tree.NavTree', {
             console.log(name);
             if(name=='Daylight' ||name=='6PM' || name=='Curfew' || name=='Overnight')
             {this.openForm(name);}
+            if(name=='Add Students')
+            {this.openForm('AddStudents');
             treenode = this;
         }
     },
