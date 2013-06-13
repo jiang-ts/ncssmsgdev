@@ -1,3 +1,4 @@
+/*
 var actypes = Ext.create('Ext.data.Store', {
     fields: ['actype'],
     data : [
