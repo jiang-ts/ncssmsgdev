@@ -35,6 +35,11 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def list_slis
+    @slis = User.where(type: 'sli')
+    render json: @slis
+  end
+
   private
 
   def check_admin_credentials

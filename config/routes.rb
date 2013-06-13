@@ -9,6 +9,7 @@ Doit::Application.routes.draw do
 
   namespace :admin do
     post 'users/add_sli'
+    get 'users/list_slis'
   end
 
   namespace :sli do
@@ -16,12 +17,14 @@ Doit::Application.routes.draw do
 
     post 'users/add_student'
     get 'users/list_signed_out'
+    get 'users/list_all_signed_out'
     get 'users/all_students'
     get 'users/:id' => 'users#show'
   end
 
   namespace :student do
     get 'signout_records/sign_in'
+    get 'profile' => 'profile#my_info'
     resources :signout_records
   end
 
