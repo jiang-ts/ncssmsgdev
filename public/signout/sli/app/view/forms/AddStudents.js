@@ -1,44 +1,14 @@
-//TODO put this in separate thing to link to. Need to go fast for now
-var halls = Ext.create('Ext.data.Store', {
-    fields: ['abbr', 'name'],
-    data : [
-        {"abbr":"1BL", "name":"1 Beall"},
-        {"abbr":"2BL", "name":"2 Beall"},
-        {"abbr":"3BL", "name":"3 Beall"},
-        {"abbr":"2BR", "name":"2 Bryan"},
-        {"abbr":"3BR", "name":"3 Bryan"},
-        {"abbr":"4BR", "name":"4 Bryan"},
-        {"abbr":"1HL", "name":"1 Hill"},
-        {"abbr":"2HLE", "name":"2 Hill East"},
-        {"abbr":"2HLN", "name":"2 Hill North"},
-        {"abbr":"1H", "name":"1 Hunt"},
-        {"abbr":"2HE", "name":"2 Hunt East"},
-        {"abbr":"2HW", "name":"2 Hunt West"},
-        {"abbr":"3HE", "name":"3 Hunt East"},
-        {"abbr":"3HW", "name":"3 Hunt West"},
-        {"abbr":"4HE", "name":"4 Hunt East"},
-        {"abbr":"4HW", "name":"4 Hunt West"},
-        {"abbr":"CCD", "name":"1C2C1D"},
-        {"abbr":"EED", "name":"1E2E1D"},
-        {"abbr":"GdRe", "name":"Ground Reynolds"},
-        {"abbr":"GdRo", "name":"Ground Royal"},
-        {"abbr":"1Ro", "name":"1 Royal"},
-    ]
-});
 var tok = Ext.decode(getCookie('token')).token;
-Ext.define('Signout.view.forms.AddSli', {
+Ext.define('Signout.view.forms.AddStudents', {
     extend: 'Ext.form.Panel',
-    xtype: 'addsli',
+    xtype: 'add-stud',
 
     layout: 'form',
     collapsible: false,
-    //id: 'addsliform',
-    //url: 'save-form.php',
     frame: true,
-    title: 'Enter new SLI credentials',
     bodyPadding: '5 5 0',
     minheight: 200,
-    width: 350,
+    width: 400,
     fieldDefaults: {
         msgTarget: 'side',
         labelWidth: 85
@@ -46,7 +16,6 @@ Ext.define('Signout.view.forms.AddSli', {
     plugins: {
         ptype: 'datatip'
     },
-    //TODO AUTH TOKEN
     defaultType: 'textfield',
     items: [{
         fieldLabel: 'First Name',
@@ -82,18 +51,11 @@ Ext.define('Signout.view.forms.AddSli', {
         allowBlank: false,
         id:'confirmpw'
     },{
-        xtype: 'combobox',
-        displayField: 'name',
-        queryMode: 'local',
-        valueField: 'name',
-        store: halls,
-        typeAhead: true,
-
-        fieldLabel: 'Hall',
+        xtype: 'numberfield',
+        fieldLabel: 'Room Number',
         afterLabelTextTpl: required,
-        name: 'hall',
+        name: 'room',
         allowBlank: false,
-        typeAhead: true,
     }],
     buttons: [{
         text: 'Save',
@@ -105,7 +67,7 @@ Ext.define('Signout.view.forms.AddSli', {
             }
             else{
                 theform.submit({
-                    url: '/admin/users/add_sli.json',
+                    url: '/sli/users/add_student.json',
                     waitMsg: 'Loading...',
                     method: 'POST',
                     params: {

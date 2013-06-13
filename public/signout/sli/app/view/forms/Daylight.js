@@ -6,7 +6,7 @@ Ext.define('Signout.view.forms.Daylight', {
 //    id: 'daylightForm',
     //url: 'save-form.php',
     frame: true,
-    title: 'Signout - Daylight Hours',
+//    title: 'Signout - Daylight Hours',
     bodyPadding: '5 5 0',
     width: 350,
     fieldDefaults: {
