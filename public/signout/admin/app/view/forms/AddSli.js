@@ -73,7 +73,14 @@ Ext.define('Signout.view.forms.AddSli', {
         name: 'password',
         inputType: 'password',
         allowBlank: false,
-        maxLengthText: 'Password must contains at least 8 characters'
+        maxLengthText: 'Password must contains at least 8 characters',
+        id:'firstpw'
+    },{
+        fieldLabel: 'Confirm Password',
+        afterLabelTextTpl: required,
+        inputType: 'password',
+        allowBlank: false,
+        id:'confirmpw'
     },{
         xtype: 'combobox',
         displayField: 'name',
@@ -93,19 +100,24 @@ Ext.define('Signout.view.forms.AddSli', {
         handler: function() {
             var theform = this.up('form').getForm();
             theform.isValid();
-            theform.submit({
-                url: '/admin/users/add_sli.json',
-                waitMsg: 'Loading...',
-                method: 'POST',
-                params: {
-                    auth_token: tok,
-                },
-                success: function (form, action) {
-                    console.log(action.response.responseText);                                   
+            if(theform.findField('firstpw').getValue()!=theform.findField('confirmpw').getValue()){
+                alert('Error: Passwords do not match!');
+            }
+            else{
+                theform.submit({
+                    url: '/admin/users/add_sli.json',
+                    waitMsg: 'Loading...',
+                    method: 'POST',
+                    params: {
+                        auth_token: tok,
+                    },
+                    success: function (form, action) {
+                        console.log(action.response.responseText);                                   
+                    }
+                    /*failure: function (response){
+                        alert('Failed');
+                    }*/
                 }
-                /*failure: function (response){
-                    alert('Failed');
-                }*/
             });
         }
     },{
