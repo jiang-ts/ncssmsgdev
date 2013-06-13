@@ -99,7 +99,7 @@ Ext.define('Signout.view.forms.AddSli', {
                 method: 'POST',
                 params: {
                     auth_token: tok,
-                }
+                },
                 success: function (form, action) {
                     console.log(action.response.responseText);                                   
                 }
