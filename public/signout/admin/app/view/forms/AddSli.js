@@ -25,6 +25,7 @@ var halls = Ext.create('Ext.data.Store', {
         {"abbr":"1Ro", "name":"1 Royal"},
     ]
 });
+var tok = Ext.decode(getCookie('token')).token;
 Ext.define('Signout.view.forms.AddSli', {
     extend: 'Ext.form.Panel',
     xtype: 'addsli',
@@ -96,6 +97,9 @@ Ext.define('Signout.view.forms.AddSli', {
                 url: '/admin/users/add_sli.json',
                 waitMsg: 'Loading...',
                 method: 'POST',
+                params: {
+                    auth_token: tok,
+                }
                 success: function (form, action) {
                     console.log(action.response.responseText);                                   
                 }
