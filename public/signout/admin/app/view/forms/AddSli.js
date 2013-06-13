@@ -117,8 +117,8 @@ Ext.define('Signout.view.forms.AddSli', {
                     /*failure: function (response){
                         alert('Failed');
                     }*/
-                }
-            });
+                });
+            }
         }
     },{
         text: 'Cancel',
